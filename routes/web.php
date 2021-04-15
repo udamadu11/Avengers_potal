@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\heroControler;
+use App\Hero;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +17,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/addHeroes', function () {
+    return view('addHeroes');
+});
+
+Route::post('addHeroes', [heroControler::class,'addHero']);
+Route::get('/', [heroControler::class,'getHero']);
+
+// Route::get('/', function () {
+//     $data = Hero::orderBy('created_at')->get();
+//     return view('welcome',['heroes'=>$data]);
+// });

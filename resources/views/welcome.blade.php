@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Avengerd Potal</title>
+        <title>Avengers Potal</title>
 
        <!-- Site title
    ================================================== -->
@@ -91,87 +91,25 @@
                         <!-- iso box section -->
                         <div class="iso-box-section wow fadeInUp" data-wow-delay="1s">
                            <div class="iso-box-wrapper col4-iso-box">
-
+                  @foreach($heroes as $hero)
                               <div class="iso-box photoshop branding col-md-4 col-sm-6">
                                  <div class="portfolio-thumb">
-                                    <img src="{{url('images/4.jpg')}}" class="img-responsive" alt="Portfolio">
+                                    <img src="{{asset('/storage/')}}/{{$hero->image}}" class="img-responsive" alt="Portfolio">
                                        <div class="portfolio-overlay">
                                           <div class="portfolio-item">
                                                 <a href="single-project.html"><i class="fa fa-link"></i></a>
-                                                <h2>Project One</h2>
+                                                <h2>{{$hero->name}}</h2>
                                              </div>
                                        </div>
                                  </div>
                               </div>
-
-                              <div class="iso-box graphic template col-md-4 col-sm-6">
-                                 <div class="portfolio-thumb">
-                                    <img src="{{asset('images/5.jpg')}}" class="img-responsive" alt="Portfolio">
-                                       <div class="portfolio-overlay">
-                                          <div class="portfolio-item">
-                                                <a href="single-project.html"><i class="fa fa-link"></i></a>
-                                                <h2>Project Two</h2>
-                                             </div>
-                                       </div>
-                                 </div>
-                              </div>
-
-                              <div class="iso-box template graphic col-md-4 col-sm-6">
-                                 <div class="portfolio-thumb">
-                                    <img src="{{asset('images/6.jpg')}}" class="img-responsive" alt="Portfolio">
-                                       <div class="portfolio-overlay">
-                                          <div class="portfolio-item">
-                                                <a href="single-project.html"><i class="fa fa-link"></i></a>
-                                                <h2>Project Three</h2>
-                                             </div>
-                                       </div>
-                                 </div>
-                              </div>
-
-                              <div class="iso-box graphic template col-md-4 col-sm-6">
-                                 <div class="portfolio-thumb">
-                                    <img src="{{asset('images/portfolio-img4.jpg')}}" class="img-responsive" alt="Portfolio">
-                                       <div class="portfolio-overlay">
-                                          <div class="portfolio-item">
-                                                <a href="single-project.html"><i class="fa fa-link"></i></a>
-                                                <h2>Project Four</h2>
-                                             </div>
-                                       </div>
-                                 </div>
-                              </div>
-
-                              <div class="iso-box photoshop branding col-md-4 col-sm-6">
-                                 <div class="portfolio-thumb">
-                                    <img src="{{asset('images/portfolio-img5.jpg')}}" class="img-responsive" alt="Portfolio">
-                                       <div class="portfolio-overlay">
-                                          <div class="portfolio-item">
-                                                <a href="single-project.html"><i class="fa fa-link"></i></a>
-                                                <h2>Project Five</h2>
-                                             </div>
-                                       </div>
-                                 </div>
-                              </div>
-
-                              <div class="iso-box graphic branding col-md-4 col-sm-6">
-                                 <div class="portfolio-thumb">
-                                    <img src="{{asset('images/portfolio-img6.jpg')}}" class="img-responsive" alt="Portfolio">
-                                       <div class="portfolio-overlay">
-                                          <div class="portfolio-item">
-                                                <a href="single-project.html"><i class="fa fa-link"></i></a>
-                                                <h2>Project Six</h2>
-                                             </div>
-                                       </div>
-                                 </div>
-                              </div>
-
+                  @endforeach
                             </div>
                         </div>
-
-               </div>
-
+               </div>      
          </div>
-
       </div>
+      <div class="d-flex justify-content-center">{{$heroes->links()}}</div>
    </div>
 </section>
 
