@@ -31,7 +31,7 @@ http://www.tooplate.com/view/2082-pure-mix
     ================================================== -->
     <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/ionicons.min.css')}}">
-    
+
     <!-- Main CSS
     ================================================== -->
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
@@ -68,7 +68,7 @@ http://www.tooplate.com/view/2082-pure-mix
 
 			<div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8">
             	<div class="header-thumb">
-              		 <h1 class="wow fadeIn" data-wow-delay="0.6s">Avengers</h1>
+              		 <h1 class="wow fadeIn" data-wow-delay="0.6s">Edit Avengers</h1>
               		 <h3 class="wow fadeInUp" data-wow-delay="0.9s">Welcome to the Team</h3>
            		</div>
 			</div>
@@ -82,27 +82,26 @@ http://www.tooplate.com/view/2082-pure-mix
 ================================================== -->
 <section id="contact">
    <div class="container">
-   <table class="table table-striped table-hover">
-   <thead>
-    <tr>
-      <th scope="col">Name</th>
-      <th scope="col">Ability</th>
-      <th scope="col">Image</th>
-      <th scope="col">Action</th>
-    </tr>
-  </thead>
-  <tbody>
-  @foreach($heroes as $hero)
-    <tr>
-      <td>{{$hero->name}}</td>
-      <td>{{$hero->ability}}</td>
-      <td><img src="{{asset('/storage/')}}/{{$hero->image}}" alt="Portfolio" style="width:150px;height:150px;"></td>
-      <td><a href="/edit/{{$hero->id}}" class="btn btn-primary"><i class="fa fa-edit"></i></a></td>
-      <td><a href="/delete/{{$hero->id}}" class="btn btn-danger"><i class="fa fa-trash"></i></a></td>
-    </tr>
-    @endforeach
-  </tbody>
-    </table>
+      <div class="row">
+
+		<div class="wow fadeInUp col-md-6 col-sm-12" data-wow-delay="1.6s">
+			<h1>Let's work together!</h1>
+			<div class="contact-form">
+				<form id="contact-form" method="post" enctype="multipart/form-data" action="/edit">
+					@csrf
+					<input name="id" type="hidden" value="{{$data->id}}">
+					<input name="name" type="text" class="form-control" value="{{$data->name}}" placeholder="Avenger Name" required>
+                    <input name="ability" type="text" value="{{$data->ability}}" class="form-control" placeholder="Ability" required>
+					<textarea name="description" class="form-control" placeholder="Description" rows="2" required>{{$data->description}}</textarea>
+					<div class="contact-submit">
+						<input type="submit" class="form-control submit" value="Edit Avenger">
+					</div>
+				</form>
+			</div>
+		</div>
+
+
+      </div>
    </div>
 </section>
 

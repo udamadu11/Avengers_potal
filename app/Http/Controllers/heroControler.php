@@ -31,4 +31,18 @@ class heroControler extends Controller
       Hero::find($id)->delete();
       return redirect('heroes');
     }
+
+    function editHero($id){
+      $data = Hero::find($id);
+      return view('edit',['data'=>$data]);
+    }
+
+    function updateHero(Request $req){
+      $hero = Hero::find($req->id);
+      $hero->name = $req->name;
+      $hero->ability = $req->ability;
+      $hero->description = $req->description;
+      $hero->save();
+      return redirect('heroes');
+    }
 }

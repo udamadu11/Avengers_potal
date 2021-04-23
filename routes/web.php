@@ -30,6 +30,8 @@ Route::get('/heroes', function () {
 });
 Route::get('heroes', [heroControler::class,'fletchHero']);
 Route::get('delete/{id}', [heroControler::class,'deleteHero']);
+Route::get('edit/{id}', [heroControler::class,'editHero']);
+Route::post('edit', [heroControler::class,'updateHero']);
 
 // Route::get('/', function () {
 //     $data = Hero::orderBy('created_at')->get();
