@@ -109,7 +109,7 @@
                </div>      
          </div>
       </div>
-      <div class="d-flex justify-content-center">{{$heroes->links()}}</div>
+     
    </div>
 </section>
 

@@ -25,6 +25,12 @@ Route::get('/addHeroes', function () {
 Route::post('addHeroes', [heroControler::class,'addHero']);
 Route::get('/', [heroControler::class,'getHero']);
 
+Route::get('/heroes', function () {
+    return view('heroes');
+});
+Route::get('heroes', [heroControler::class,'fletchHero']);
+Route::get('delete/{id}', [heroControler::class,'deleteHero']);
+
 // Route::get('/', function () {
 //     $data = Hero::orderBy('created_at')->get();
 //     return view('welcome',['heroes'=>$data]);
